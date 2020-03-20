@@ -60,7 +60,7 @@ class Room(core_models.TimeStampedModel):
     guests = models.IntegerField(help_text="How many people will be staying?")
     beds = models.IntegerField()
     bedrooms = models.IntegerField()
-    baths = models.IntegerField()
+    bathrooms = models.IntegerField()
     check_in = models.TimeField()
     check_out = models.TimeField()
     host = models.ForeignKey(
@@ -94,7 +94,7 @@ class Room(core_models.TimeStampedModel):
 
     def first_photo(self):
         try:
-            photo, = self.photos.all()[:1]
+            photo = self.photos.all()[:1]
             return photo.file.url
         except ValueError:
             return None
