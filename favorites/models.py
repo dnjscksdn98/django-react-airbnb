@@ -6,10 +6,10 @@ class Favorite(core_models.TimeStampedModel):
 
     name = models.CharField(max_length=80)
     user = models.OneToOneField(
-        "users.User", related_name="favorite", on_delete=models.CASCADE
+        "users.User", related_name="favorites", on_delete=models.CASCADE
     )
     rooms = models.ManyToManyField(
-        "rooms.Room", related_name="favorite", blank=True)
+        "rooms.Room", related_name="favorites", blank=True)
 
     def __str__(self):
         return self.name
