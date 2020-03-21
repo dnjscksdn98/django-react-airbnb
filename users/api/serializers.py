@@ -6,11 +6,11 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = user_models.User
-        fields = (
+        fields = [
             'id',
             'email',
             'username',
-        )
+        ]
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
@@ -21,7 +21,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = user_models.User
-        fields = (
+        fields = [
             'id',
             'first_name',
             'last_name',
@@ -33,7 +33,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
             'birthdate',
             'language',
             'currency',
-        )
+        ]
 
     def get_gender(self, obj):
         return obj.get_gender_display()

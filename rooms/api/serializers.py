@@ -10,11 +10,11 @@ class PhotoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = room_models.Photo
-        fields = (
+        fields = [
             'id',
             'caption',
-            'file'
-        )
+            'file',
+        ]
 
 
 class RoomSerializer(serializers.ModelSerializer):
@@ -28,7 +28,7 @@ class RoomSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = room_models.Room
-        fields = (
+        fields = [
             'id',
             'name',
             'description',
@@ -48,7 +48,7 @@ class RoomSerializer(serializers.ModelSerializer):
             'facilities',
             'house_rules',
             'photos',
-        )
+        ]
 
     def get_host(self, obj):
         return user_serializers.UserSerializer(obj.host).data
