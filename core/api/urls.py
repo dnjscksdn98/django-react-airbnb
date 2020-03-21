@@ -1,7 +1,7 @@
-from django.urls import path
-from rooms.api import views as room_views
+from django.urls import path, include
 
 
 urlpatterns = [
-    path('rooms/', room_views.RoomView.as_view(), name='rooms'),
+    path('users/', include('users.api.urls')),
+    path('rooms/', include('rooms.api.urls')),
 ]
