@@ -38,7 +38,7 @@ class User(AbstractUser):
     bio = models.TextField(null=True, blank=True)
     gender = models.CharField(
         choices=GENDER_CHOICES, max_length=6, null=True, blank=True)
-    birthdate = models.DateField(null=True)
+    birthdate = models.DateField(null=True, blank=True)
     language = models.CharField(
         choices=LANGUAGE_CHOICES, max_length=2, null=True, blank=True, default=LANGUAGE_KOREAN)
     currency = models.CharField(
